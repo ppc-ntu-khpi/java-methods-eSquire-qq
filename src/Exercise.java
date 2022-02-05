@@ -1,7 +1,7 @@
 public class Exercise {
 
-    public static void Calculate(int number){
-        
+    public static void Calculate(){
+        int number = 10;
         boolean condition = true;
 
         for (int counter1 = 2; counter1 <= number; counter1++) {
