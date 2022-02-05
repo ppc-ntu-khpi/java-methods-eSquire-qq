@@ -1,6 +1,7 @@
 public class TestResult {
-
-    public static void main(int counter1) {
-            return counter1;
+    
+    public static void main(String[] args) {
+        int number = 10;
+        Exercise.Calculate();
     }
 }
