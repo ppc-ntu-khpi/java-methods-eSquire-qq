@@ -1,25 +1,26 @@
 public class Exercise {
 
-    public static void Calculate(){
-        int number = 10;
-        boolean condition = true;
+    public static int Calculate(int number1, int number2){
 
-        for (int counter1 = 2; counter1 <= number; counter1++) {
-              for (int counter2 = 2; counter2 < counter1; counter2++) {
-                  if (counter1 % counter2 == 0) {
-                    condition = false;
-                    break;
-                  }
-         }
+          int [][] Array = new int[number1 + 1][number2 + 1];
 
-         if (condition) {
-            System.out.print(counter1 + ",");
-         } 
-         
-         else {
-            condition = true;
-         }
+            for (int i = 0; i <= number1; i++) {
+                for (int j = 0; j <= Math.min(i, number2); j++) {
 
-      }
+                    if (j == 0 || j == i) {
+                        Array[i][j] = 1;
+                    } else {
+                        Array[i][j] = Array[i - 1][j - 1] + Array[i - 1][j];
+                    }
+
+                }
+            }
+
+            return Array[number1][number2] * Array[number1][number2 - 1];
     }
+
+    static int findNN( int number1, int number2)
+        {
+            return (Calculate(number1, number2)) / number1;
+        }
 }
